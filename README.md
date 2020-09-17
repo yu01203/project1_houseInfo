@@ -43,7 +43,7 @@
 
 **Import**
 
-`git clone https://github.com/yu01203/project_1-houseInfo-.git`
+`git clone https://github.com/yu01203/project1_houseInfo.git`
 
 
 
