@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ssafy.happyhouse.dao.EnvironmentDao">
+
+	<!-- 특정 동에 대한 전체 업체 조회 -->
+	<select id="selectEnvs" resultType="Environment">
+		select *
+		from environment
+		where address like CONCAT('%', #{dong}, '%')
+		limit 10
+	</select>
+	
+</mapper>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.happyhouse.dao.ReplyDAO">
+
+
+	<select id="selectReply" resultType="reply">
+		 select reply_no, qna_no, reply_content, reply_userid, reply_datetime
+		 from reply_board
+		 order by reply_datetime desc
+	</select>
+	
+
+	
+	<insert id="insertReply" parameterType="reply">
+		insert into reply_board(
+			qna_no, reply_content, reply_userid
+		) values (
+			#{qna_no}, #{reply_content}, #{reply_userid}
+		)
+	</insert>
+	
+	<select id="selectReplyByReply_no" resultType="reply">
+		select reply_no, qna_no, reply_content, reply_userid, reply_datetime
+		  from reply_board 
+		 where reply_no = #{reply_no}
+	</select>
+	
+	<update id="updateReply" parameterType="reply">
+		update reply_board 
+		   set qna_no = #{qna_no}, 
+		   	   reply_content = #{reply]_content}
+		 where reply_no = #{reply_no}
+	</update>
+	
+	
+	<delete id="deleteReply" parameterType="int">
+		delete 
+		  from reply_board 
+		 where qna_no = #{qna_no}
+	</delete>
+
+</mapper>
+

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.happyhouse.dao.PolicyDAO">
+
+
+	<select id="selectPolicy" resultType="policy">
+		select policy_no, policy_title, policy_content, policy_userid, policy_datetime
+		  from policy_board
+		 order by policy_no desc
+	</select>
+	
+
+	
+	<insert id="insertPolicy" parameterType="policy">
+		insert into policy_board(
+			policy_title, policy_content, policy_userid
+		) values (
+			#{policy_title}, #{policy_content}, #{policy_userid}
+		)
+	</insert>
+	
+	<select id="selectPolicyByPolicy_no" resultType="policy">
+		select policy_no, policy_title, policy_content, policy_userid, policy_datetime
+		  from policy_board 
+		 where policy_no = #{policy_no}
+	</select>
+	
+	<update id="updatePolicy" parameterType="policy">
+		update policy_board 
+		   set policy_title = #{policy_title}, 
+		   	   policy_content = #{policy_content}
+		 where policy_no = #{policy_no}
+	</update>
+	
+	
+	<delete id="deletePolicy" parameterType="int">
+		delete 
+		  from policy_board 
+		 where policy_no = #{policy_no}
+	</delete>
+
+</mapper>
+

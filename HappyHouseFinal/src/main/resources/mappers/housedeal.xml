@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ssafy.happyhouse.dao.HousedealDao">
+
+	<!-- 전체 내역 조회 -->
+	<select id="selectDeals" resultType="Housedeal">
+		select *
+		from housedeal
+		where dong_name like CONCAT('%', #{dongName}, '%')
+		and type in
+		<foreach collection="type" item="item" index="index" open="(" separator="," close=")">
+			<if test="item">
+				#{index}+1
+			</if>	
+		</foreach>
+	</select>
+	
+	<!-- 특정 내역 조회 -->
+	<select id="selectDeal" resultType="Housedeal">
+		select *
+		from housedeal
+		where no = #{no}
+	</select>
+
+</mapper>

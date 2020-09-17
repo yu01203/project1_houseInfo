@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ssafy.happyhouse.dao.ShopDao">
+
+	<!-- 전체 항목조회 -->
+	<select id="selectShops" resultType="Shop">
+		select *
+		from shop
+		where dong_name like CONCAT('%', #{dong}, '%')
+		and sub_code = #{sub}
+	</select>
+	
+	<!-- 대분류 목록 가져오기 -->
+	<select id="getMainCategory" resultType="Map">
+		select main_name, main_code
+		from shop
+		group by main_code
+	</select>
+	
+	<!-- 중분류 목록 가져오기 -->
+	<select id="getMiddleCategory" resultType="Map">
+		select middle_name, middle_code
+		from shop
+		where main_code like CONCAT('%', #{main}, '%')
+		group by middle_code
+	</select>
+	
+	<!-- 소분류 목록 가져오기 -->
+	<select id="getSubCategory" resultType="Map">
+		select sub_name, sub_code
+		from shop
+		where middle_code like CONCAT('%', #{middle}, '%')
+		group by sub_code
+	</select>
+	
+	
+</mapper>
