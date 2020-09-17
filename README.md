@@ -78,6 +78,11 @@ npm run serve
 vue.js 를 실행시키며 생긴 localhost 주소로 접속
 
 
+## 팀소개
+
+- 김남규(Front-End , Back-End)
+- 김태훈(Front-End , Back-End)
+
 
 
 
