@@ -1,5 +1,11 @@
 # houseInfo
 
+<img src = "https://user-images.githubusercontent.com/26289683/93533602-465e4480-f97e-11ea-98e6-88c9692852e5.png" width = "50%" height="50%">
+
+<img src = "https://user-images.githubusercontent.com/26289683/93533607-48280800-f97e-11ea-9f07-76a62132f29d.png" width = "50%" height="50%">
+
+<img src = "https://user-images.githubusercontent.com/26289683/93533609-49593500-f97e-11ea-883d-e6d70389364b.png" width = "50%" height="50%">
+
 ## 기획배경
 
 집을 사기 위해 웹에 접속했으나 화면ㄴ이 너무 난잡해 어디부터 봐야할지 모르겠다.
@@ -16,11 +22,14 @@
 
 ## 개발환경
 
--개발언어 : Spring, Vue.js
+-개발언어 : Java, Vue.js
 
--IDE : STS, Visual Studio Code
+-IDE : Spring Tool Suite, Visual Studio Code
 
 -DB : mySQL
+
+-공공 데이터 : 국토고통부 아파트/ 연립다세대 실거래가 자료 , 법정동코드, 환경 지도점검 데이터, 상권정보
+              
 
 ## 핵심기능
 
